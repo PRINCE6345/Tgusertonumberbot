@@ -119,12 +119,7 @@ def menu_kb():
 
 def search_kb():
     return [[
-        {'text': '🎯 𝗡𝗲𝘄 𝗧𝗮𝗿𝗴𝗲𝘁', 'switch_inline_query_chosen_chat': {
-            'allow_user_chats': True,
-            'allow_bot_chats': False,
-            'allow_group_chats': False,
-            'allow_channel_chats': False
-        }},
+        {'text': '🎯 𝗡𝗲𝘄 𝗧𝗮𝗿𝗴𝗲𝘁', 'request_user': {'request_id': 1, 'user_is_bot': False}},
         {'text': '🏠 𝗠𝗲𝗻𝘂', 'callback_data': 'menu'}
     ]]
 
