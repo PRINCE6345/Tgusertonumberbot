@@ -1,4 +1,4 @@
-import os
+'text' os
 import json
 import requests
 from datetime import date
@@ -94,12 +94,7 @@ def is_member(uid):
 def main_kb():
     return [
         [
-            {'text': '🎯 𝗧𝗔𝗥𝗚𝗘𝗧', 'switch_inline_query_chosen_chat': {
-                'allow_user_chats': True,
-                'allow_bot_chats': False,
-                'allow_group_chats': False,
-                'allow_channel_chats': False
-            }},
+            {'text': '🎯 𝗧𝗔𝗥𝗚𝗘𝗧', 'request_user': {'request_id': 1, 'user_is_bot': False}},
         ],
         [
             {'text': '🔎 𝗛𝗼𝘄 𝘁𝗼 𝗦𝗲𝗮𝗿𝗰𝗵', 'callback_data': 'how_search'},
