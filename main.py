@@ -80,7 +80,9 @@ def typing(cid):
     tg('sendChatAction', {'chat_id': cid, 'action': 'typing'})
 
 def is_member(uid):
-    return True
+    r = tg('getChatMember', {'chat_id': CHANNEL, 'user_id': uid})
+    status = r.get('result', {}).get('status', '')
+    return status in ['member', 'administrator', 'creator']
 
 # ─── Keyboards ────────────────────────────────────────────
 def main_kb():
