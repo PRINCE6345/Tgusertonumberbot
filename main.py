@@ -84,16 +84,7 @@ def typing(cid):
     tg('sendChatAction', {'chat_id': cid, 'action': 'typing'})
 
 def is_member(uid):
-    try:
-        r = tg('getChatMember', {'chat_id': CHANNEL, 'user_id': uid})
-        if not r.get('ok'):
-            return True  # API error pe access do
-        status = r.get('result', {}).get('status', '')
-        if status == 'left' or status == 'kicked':
-            return False
-        return True
-    except:
-        return True
+    return True
 # ═══════════════════════════════════════════════════
 #   KEYBOARDS
 # ═══════════════════════════════════════════════════
