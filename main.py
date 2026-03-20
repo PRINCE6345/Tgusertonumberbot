@@ -242,7 +242,9 @@ def do_search(cid, uid, target_id, db):
         and res.get('code') == 200
         and res.get('data', {}).get('found') is True
     ):
-        data         = res['data']if number == target_id or number == 'N/A':
+        data         = res['data']
+number       = data.get('number', 'N/A')
+if number == target_id or number == 'N/A':
     number = 'Not Available'
         country_code = data.get('country_code', '')
         country      = data.get('country', '—')
