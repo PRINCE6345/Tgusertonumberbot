@@ -242,8 +242,9 @@ def do_search(cid, uid, target_id, db):
         and res.get('code') == 200
         and res.get('data', {}).get('found') is True
     ):
-        data         = res['data']
-        number       = data.get('number', 'N/A')
+        data         = res['data']if number == target_id or number == 'N/A':
+    send(cid, not_found_msg(target_id, pts_left), search_kb())
+    return
         country_code = data.get('country_code', '')
         country      = data.get('country', '—')
         send(cid, result_msg(number, country_code, country, target_id, pts_left), search_kb())
